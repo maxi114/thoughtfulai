@@ -1,8 +1,8 @@
-
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { IoIosSend } from "react-icons/io";
-import { ThreeDot } from "react-loading-indicators"
+import { ThreeDot } from "react-loading-indicators";
+import Image from 'next/image';
 
 export default function Chat() {
   const [messages, setMessages] = useState([
@@ -81,18 +81,21 @@ export default function Chat() {
   };
 
   return (
-    <div className="d-flex flex-column h-100" >
+    <div className="d-flex flex-column h-100">
       <div className="card-header bg-primary text-white">
-        <div className="d-flex align-items-center p-2"
-        style={{ backgroundImage: "linear-gradient(to right, #ff9e00, #e52a71,#a500dd,#14235a)" }}
+        <div
+          className="d-flex align-items-center p-2"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, #ff9e00, #e52a71,#a500dd,#14235a)",
+          }}
         >
-          <img
+          <Image
             src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-5.webp"
             alt="Tina avatar"
             className="rounded-circle me-2"
-            width="40"
-            height='40'
-           
+            width={40} 
+            height={40} 
           />
           <div>
             <h5 className="mb-0">Tina</h5>
@@ -100,10 +103,27 @@ export default function Chat() {
           </div>
         </div>
       </div>
-      <div className="flex-grow-1 overflow-auto p-3" style={{ maxHeight: "calc(100% - 100px)" }}>
+      <div
+        className="flex-grow-1 overflow-auto p-3"
+        style={{ maxHeight: "calc(100% - 100px)" }}
+      >
         {messages.map((message, index) => (
-          <div key={index} className={`d-flex ${message.role === "assistant" ? "justify-content-start" : "justify-content-end"} mb-3`}>
-            <div className={`card ${message.role === "assistant" ? "bg-light" : "bg-primary text-white"}`} style={{ maxWidth: "75%" }}>
+          <div
+            key={index}
+            className={`d-flex ${
+              message.role === "assistant"
+                ? "justify-content-start"
+                : "justify-content-end"
+            } mb-3`}
+          >
+            <div
+              className={`card ${
+                message.role === "assistant"
+                  ? "bg-light"
+                  : "bg-primary text-white"
+              }`}
+              style={{ maxWidth: "75%" }}
+            >
               <div className="card-body py-2 px-3">
                 <p className="mb-0">{message.content}</p>
               </div>
@@ -134,10 +154,25 @@ export default function Chat() {
                 sendMessage();
               }
             }}
-            style={{ resize: "none", overflow: "auto", minHeight: "30px", maxHeight: "80px", }}
+            style={{
+              resize: "none",
+              overflow: "auto",
+              minHeight: "30px",
+              maxHeight: "80px",
+            }}
           ></textarea>
-          <button className="" type="button" onClick={sendMessage} style={{ width: "5rem", color: "#e52a71", fontSize: "40px", paddingLeft:"10px" }}>
-          <IoIosSend />
+          <button
+            className=""
+            type="button"
+            onClick={sendMessage}
+            style={{
+              width: "5rem",
+              color: "#e52a71",
+              fontSize: "40px",
+              paddingLeft: "10px",
+            }}
+          >
+            <IoIosSend />
           </button>
         </div>
       </div>
