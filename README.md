@@ -1,6 +1,6 @@
 Maximillian Kodi application to Thoughful AI.
 
-Try out the live demo  [here](https://thoughtfulai.vercel.app/) project bootstrapped 
+Try out the live demo  [here](https://thoughtfulai.vercel.app/) 
 
 ## Getting started
 
