@@ -1,0 +1,11 @@
+/* For Chrome, Safari, and Edge */
+.ul::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* For Firefox */
+.ul {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
